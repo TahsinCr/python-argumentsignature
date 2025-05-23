@@ -143,7 +143,7 @@ _For more examples, please refer to the [Documentation][wiki-url]_
 
 ##  License
 
-Distributed under the MIT License. See [LICENSE.txt][license-url] for more information.
+Distributed under the MIT License. See [LICENSE][license-url] for more information.
 
 
 <br>

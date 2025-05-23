@@ -1,6 +1,6 @@
 from typing import Type, Generic, TypeVar
 
-__version__ = '1.0'
+__version__ = '1.0.1'
 
 TCallable = TypeVar("TCallable")
 
@@ -11,13 +11,14 @@ class ArgumentType:
     def __str__(self):
         return self.name
 
+EMPTY = Ellipsis
 ARG = ArgumentType(name='ARG')
 ARGS = ArgumentType(name='ARGS')
 KWARGS = ArgumentType(name='KWARGS')
 RETURN = ArgumentType(name='RETURN')
 
 class Argument(Generic[TCallable]):
-    def __init__(self, name:str, type:Type[TCallable], default:TCallable=..., argtype:ArgumentType=ARG):
+    def __init__(self, name:str, type:Type[TCallable], default:TCallable=EMPTY, argtype:ArgumentType=ARG):
         self.name = name
         self.type = type
         self.default = default
@@ -37,8 +38,8 @@ class Argument(Generic[TCallable]):
         return "{}({})".format(self.__class__.__name__, ', '.join(items))
 
 
-class ArgumentValue(Argument, Generic[TCallable]):
-    def __init__(self, name:str, type:Type[TCallable], value:TCallable, default:TCallable=..., argtype:ArgumentType=ARG):
+class ArgumentValue(Argument[TCallable], Generic[TCallable]):
+    def __init__(self, name:str, type:Type[TCallable], value:TCallable, default:TCallable=EMPTY, argtype:ArgumentType=ARG):
         super().__init__(name=name, type=type, default=default, value=value, argtype=argtype)
         self.value = value
 
@@ -50,12 +51,17 @@ class ArgumentValue(Argument, Generic[TCallable]):
             argtype = self.argtype       
         )
 
+def is_default_argument(argument:Argument):
+    return argument.argtype is ARG and argument.default is not EMPTY
+
 __all__ = [
     'ArgumentType',
     'Argument',
     'ArgumentValue',
+    'EMPTY',
     'ARG',
     'ARGS',
     'KWARGS',
-    'RETURN'
+    'RETURN',
+    'is_default_argument'
 ]

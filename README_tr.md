@@ -218,7 +218,7 @@ _Daha fazla örnek için lütfen [belgelere][wiki-url] bakın_
 
 ##  Yol haritası
 
-- [ ] Değişiklik Günlüğü Ekle
+- [ ] Dökümantasyon ekle.
 
 Önerilen özelliklerin (ve bilinen sorunların) tam listesi için [açık sorunlara][issues-url] bakın.
 
@@ -260,7 +260,7 @@ Projeye yıldız vermeyi unutmayın! Tekrar teşekkürler!
 
 ##  Lisans
 
-MIT Lisansı altında dağıtılmaktadır. Daha fazla bilgi için [LICENSE.txt][license-url] konusuna bakın.
+MIT Lisansı altında dağıtılmaktadır. Daha fazla bilgi için [LICENSE][license-url] konusuna bakın.
 
 <p align="right">(<a href="#readme-top">başa geri dön</a>)</p>
 

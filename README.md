@@ -214,7 +214,7 @@ _For more examples, please refer to the [Documentation][wiki-url]_
 
 ##  Roadmap
 
-- [ ] Add Documents
+- [ ] Add documentation.
 
 See the [open issues][issues-url] for a full list of proposed features (and known issues).
 
@@ -256,7 +256,7 @@ Don't forget to give the project a star! Thanks again!
 
 ##  License
 
-Distributed under the MIT License. See [LICENSE.txt][license-url] for more information.
+Distributed under the MIT License. See [LICENSE][license-url] for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
