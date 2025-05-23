@@ -1,6 +1,6 @@
 from typing import Type, Generic, TypeVar
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 TCallable = TypeVar("TCallable")
 
@@ -34,7 +34,10 @@ class Argument(Generic[TCallable]):
         )
     
     def __str__(self):
-        items = list(map(lambda i: i[0]+': '+str(i[1]), self.__dict__.items()))
+        local_dict = self.__dict__.copy()
+        if isinstance(self.default, str):
+            local_dict['default'] = "'{}'".format(self.default)
+        items = list(map(lambda i: i[0]+': '+str(i[1]), local_dict.items()))
         return "{}({})".format(self.__class__.__name__, ', '.join(items))
 
 
@@ -50,6 +53,15 @@ class ArgumentValue(Argument[TCallable], Generic[TCallable]):
             default = self.default,
             argtype = self.argtype       
         )
+    
+    def __str__(self):
+        local_dict = self.__dict__.copy()
+        if isinstance(self.default, str):
+            local_dict['default'] = "'{}'".format(self.default)
+        if isinstance(self.value, str):
+            local_dict['value'] = "'{}'".format(self.value)
+        items = list(map(lambda i: i[0]+': '+str(i[1]), local_dict.items()))
+        return "{}({})".format(self.__class__.__name__, ', '.join(items))
 
 def is_default_argument(argument:Argument):
     return argument.argtype is ARG and argument.default is not EMPTY

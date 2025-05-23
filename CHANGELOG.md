@@ -1,6 +1,13 @@
 # **Change Log**
 All notable changes to this project will be documented in this file.
 
+## **[1.0.2] - 23.05.2025**
+The __str__ magic methods of the Argument and ArgumentValue classes have been fixed.
+### Fixed
+ * The __str__ magic methods of the Argument and ArgumentValue classes have been fixed.
+
+<br>
+
 ## **[1.0.1] - 23.05.2025**
 Added `EMPTY`, `is_default_argument` and fixed `ArgumentValue` generic structure.
 ### Added
