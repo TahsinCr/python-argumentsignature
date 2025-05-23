@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "argumentsignature"
-version = "1.0.2"
+version = "1.0.3"
 description = "Argument classes for callable objects in Python."
 license = { text = "MIT" }
 requires-python = ">=3"

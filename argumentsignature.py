@@ -1,6 +1,6 @@
 from typing import Type, Generic, TypeVar
 
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 
 TCallable = TypeVar("TCallable")
 
@@ -43,7 +43,7 @@ class Argument(Generic[TCallable]):
 
 class ArgumentValue(Argument[TCallable], Generic[TCallable]):
     def __init__(self, name:str, type:Type[TCallable], value:TCallable, default:TCallable=EMPTY, argtype:ArgumentType=ARG):
-        super().__init__(name=name, type=type, default=default, value=value, argtype=argtype)
+        super().__init__(name=name, type=type, default=default, argtype=argtype)
         self.value = value
 
     def to_argument(self) -> Argument[TCallable]:
